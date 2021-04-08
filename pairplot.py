@@ -18,15 +18,20 @@ pd.set_option("display.width", None)
 
 # Create initial dataframe using california.data
 cali_df = pd.DataFrame(california.data, columns=california.feature_names)
-#Adds a columns for the median house values to the data frame
+# cali_df['MedHouseValue'] = [california.target[i] for i in california.feature_names]
+
+# Adds a columns for the median house values to the data frame
 cali_df["MedHouseValue"] = pd.Series(california.target)
 
-print(cali_df.describe())
-print(cali_df['MedHouseValue'].describe())
+# print(cali_df.describe())
+# print(cali_df["MedHouseValue"].describe())
 
+print(cali_df.head())
 
-sns.set(font_scale=1.1)
-sns.set_style('whitegrid')
-g = sns.pairplot(data=cali_df,vars=cali_df.columns[0:7], hue='MedHouseValue')
+sns.set(font_scale=2)
+sns.set_style("whitegrid")
+grid = sns.pairplot(
+    data=cali_df, vars=cali_df.columns[0:4]
+)
 
 plt.show()
