@@ -23,10 +23,6 @@ cali_df = pd.DataFrame(california.data, columns=california.feature_names)
 # Adds a columns for the median house values to the data frame
 cali_df["MedHouseValue"] = pd.Series(california.target)
 
-# print(cali_df.describe())
-# print(cali_df["MedHouseValue"].describe())
-
-print(cali_df.head())
 
 sns.set(font_scale=2)
 sns.set_style("whitegrid")
